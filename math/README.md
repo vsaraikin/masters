@@ -1,0 +1,1 @@
+[Original Course](https://github.com/girafe-ai/math-basics-for-ai)
