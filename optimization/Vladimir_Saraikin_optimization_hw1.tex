@@ -75,7 +75,7 @@ Graded Assignment 1}
 
 \question[2]{Convexity Preservation Under Maps}
 
-\textbf{Linear Map Case:} \\
+Linear Map Case: \\
 Assume \( f \) is a linear map, i.e., \( f(x) = Ax \) for some matrix \( A \).
 \begin{itemize}
     \item Take any two points \( x, y \in f^{-1}(C) \).
@@ -85,7 +85,7 @@ Assume \( f \) is a linear map, i.e., \( f(x) = Ax \) for some matrix \( A \).
     \item Thus, \( \lambda x + (1-\lambda)y \in f^{-1}(C) \), proving convexity.
 \end{itemize}
 
-\textbf{Perspective Map Case:} \\
+Perspective Map Case: \\
 Assume \( f \) is a perspective map, i.e., \( f(x, t) = \frac{x}{t} \) for \( x \in \mathbb{R}^n, t \in \mathbb{R} \setminus \{0\} \).
 \begin{itemize}
     \item Consider two points \( (x_1, t_1), (x_2, t_2) \in f^{-1}(C) \).
@@ -98,9 +98,9 @@ Assume \( f \) is a perspective map, i.e., \( f(x, t) = \frac{x}{t} \) for \( x 
 
 \question[2]{Convexity Characterization of Sets in \( \mathbb{R}^n \)}
 
-\textbf{Proof:}
+Proof:
 
-\textbf{If \( C \) is convex:}
+If \( C \) is convex:
 \begin{itemize}
     \item For \( x, y \in C \), \( \lambda x + (1-\lambda)y \in C \) for \( \lambda \in [0,1] \).
     \item Hence, \( \alpha x, \beta y \in C \) for \( \alpha, \beta \geq 0 \).
@@ -108,7 +108,7 @@ Assume \( f \) is a perspective map, i.e., \( f(x, t) = \frac{x}{t} \) for \( x 
     \item It follows that \( (\alpha + \beta)C \subseteq \alpha C + \beta C \).
 \end{itemize}
 
-\textbf{If \( (\alpha + \beta)C = \alpha C + \beta C \):}
+If \( (\alpha + \beta)C = \alpha C + \beta C \):
 \begin{itemize}
     \item For \( x, y \in C \), \( \alpha = \lambda \), \( \beta = 1-\lambda \), \( \lambda \in [0,1] \).
     \item Then, \( \lambda x + (1-\lambda)y \in \lambda C + (1-\lambda)C = (\lambda + 1 - \lambda)C = C \).
