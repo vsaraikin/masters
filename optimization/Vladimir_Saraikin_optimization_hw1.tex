@@ -1,0 +1,119 @@
+\documentclass{exam}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+    
+\usepackage{amsmath}
+\usepackage{dsfont}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\printanswers
+
+\title{Optimization methods  \\ 
+Graded Assignment 1}
+\author{Vladimir Saraikin}
+\date{Fall 2023}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{questions}
+
+\question[1]{Correct points:}
+
+\begin{enumerate}
+    \item Whether it has 5 extremums in the segment \([-4; 4]\)
+    % The function \( f(x) = |x \cos x| \) is periodic and symmetrical about the y-axis. 
+    % Extremums occur where the derivative is zero or undefined. Due to the periodic nature of cosine and the multiplication by \( x \), multiple extremums are expected, but exact count requires detailed analysis.
+
+    \item If the global minimum is zero
+    % Since \( |x \cos x| \) is always non-negative and reaches zero at multiples of \(\pi\) (where \(\cos x = 0\)), the global minimum of this function is zero.
+
+    \item Whether the global maximum is unique
+    % The function is periodic with the magnitude of \( x \) increasing the maximum values. Thus, the global maximum is not unique.
+
+    \item If the number of local minimums is finite
+    % Local minimums occur at multiples of \(\pi\) where \( \cos x = 0 \). Since this happens infinitely often, the number of local minimums is infinite.
+
+    \item Whether the number of local maximums is countable
+    % Local maximums occur at points where the derivative changes sign, happening at countably infinite points.
+
+    \item If the function is smooth and continuous
+    % The function \( f(x) = |x \cos x| \) is continuous but not smooth everywhere due to the absolute value operation causing cusps at multiples of \(\pi\).
+\end{enumerate}
+
+\question[3]{Verifying Convexity of Sets}
+
+(a) Given \( S_a \subseteq \mathbb{R}^n \) defined by a polynomial \( P(x) \), verify convexity:
+\[ \text{For } x, y \in S_a, \lambda \in [0,1], \text{ check if } \lambda x + (1 - \lambda)y \in S_a. \]
+
+(b) For \( S_b \subseteq \mathbb{R}^2 \) with \( xy \leq k \), \( k \in \mathbb{R} \), analyze:
+\[ \text{Convexity if } \forall x, y \in S_b, \lambda x + (1 - \lambda)y \in S_b. \]
+
+(c) Let \( S_c \) be matrices in \( \mathbb{R}^{n \times n} \) with diagonal criteria. Confirm:
+\[ \text{Linear combinations preserve conditions: } \lambda A + (1 - \lambda)B \in S_c, \forall A, B \in S_c. \]
+
+(d) For \( S_d \) with min/max element bounds in \( \mathbb{R}^n \), test convexity:
+\[ \text{If } x, y \in S_d, \text{ then } \lambda x + (1 - \lambda)y \in S_d, \forall \lambda \in [0,1]. \]
+
+(e) Given \( S_e \) of matrices with rank \( r \), verify:
+\[ \text{Convexity if } \forall A, B \in S_e, \lambda A + (1 - \lambda)B \text{ has rank } r, \forall \lambda \in [0,1]. \]
+
+
+
+\question[2]{Convexity Preservation Under Maps}
+
+\textbf{Linear Map Case:} \\
+Assume \( f \) is a linear map, i.e., \( f(x) = Ax \) for some matrix \( A \).
+\begin{itemize}
+    \item Take any two points \( x, y \in f^{-1}(C) \).
+    \item By definition of preimage, \( f(x), f(y) \in C \).
+    \item Since \( C \) is convex, for any \( \lambda \in [0,1] \), \( \lambda f(x) + (1-\lambda)f(y) \in C \).
+    \item Using linearity, \( f(\lambda x + (1-\lambda)y) = \lambda Ax + (1-\lambda)Ay = \lambda f(x) + (1-\lambda)f(y) \in C \).
+    \item Thus, \( \lambda x + (1-\lambda)y \in f^{-1}(C) \), proving convexity.
+\end{itemize}
+
+\textbf{Perspective Map Case:} \\
+Assume \( f \) is a perspective map, i.e., \( f(x, t) = \frac{x}{t} \) for \( x \in \mathbb{R}^n, t \in \mathbb{R} \setminus \{0\} \).
+\begin{itemize}
+    \item Consider two points \( (x_1, t_1), (x_2, t_2) \in f^{-1}(C) \).
+    \item By definition, \( f(x_1, t_1), f(x_2, t_2) \in C \).
+    \item For \( \lambda \in [0,1] \), check \( \lambda f(x_1, t_1) + (1-\lambda)f(x_2, t_2) \in C \).
+    \item Note: \( f(\lambda(x_1, t_1) + (1-\lambda)(x_2, t_2)) = \frac{\lambda x_1 + (1-\lambda)x_2}{\lambda t_1 + (1-\lambda)t_2} \).
+    \item If \( \lambda t_1 + (1-\lambda)t_2 \neq 0 \), \( \frac{\lambda x_1 + (1-\lambda)x_2}{\lambda t_1 + (1-\lambda)t_2} \in C \).
+    \item Hence, \( \lambda(x_1, t_1) + (1-\lambda)(x_2, t_2) \in f^{-1}(C) \), proving convexity.
+\end{itemize}
+
+\question[2]{Convexity Characterization of Sets in \( \mathbb{R}^n \)}
+
+\textbf{Proof:}
+
+\textbf{If \( C \) is convex:}
+\begin{itemize}
+    \item For \( x, y \in C \), \( \lambda x + (1-\lambda)y \in C \) for \( \lambda \in [0,1] \).
+    \item Hence, \( \alpha x, \beta y \in C \) for \( \alpha, \beta \geq 0 \).
+    \item Therefore, \( \alpha x + \beta y \in \alpha C + \beta C \).
+    \item It follows that \( (\alpha + \beta)C \subseteq \alpha C + \beta C \).
+\end{itemize}
+
+\textbf{If \( (\alpha + \beta)C = \alpha C + \beta C \):}
+\begin{itemize}
+    \item For \( x, y \in C \), \( \alpha = \lambda \), \( \beta = 1-\lambda \), \( \lambda \in [0,1] \).
+    \item Then, \( \lambda x + (1-\lambda)y \in \lambda C + (1-\lambda)C = (\lambda + 1 - \lambda)C = C \).
+    \item Thus, \( C \) is convex.
+\end{itemize}
+
+\end{questions}
+\end{document}
