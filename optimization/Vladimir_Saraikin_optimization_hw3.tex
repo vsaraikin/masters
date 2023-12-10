@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage{secdot}
+\usepackage{lineno}
+
+
+
+\title{Solution of the home assignment  № 3}
+\author{Vladimir Saraikin}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+
+2. Any strongly convex function has a unique global minimum 
+\[ \text{Strongly convex functions, by definition, have a unique global minimum due to the strictness of their convexity.} \]
+
+
+\section{Problem 2}
+
+\begin{enumerate}
+    \item $ f(x) = \sup_{y \in C} \langle y, x \rangle $: Convex. The supremum of a set of linear functions is convex.
+    \item $ f(x) = \| Ax - b \| $: Convex. Norms are convex, and the composition of a convex function with an affine function is convex.
+    \item $ f(x) = \sum_{i=1}^{n} |x_i|^{1/2} $: Neither convex nor concave. The function \( |x|^{1/2} \) is not globally concave or convex.
+    \item $ f(X) = \lambda_1(X) + \ldots + \lambda_k(X) $: Convex. The sum of the largest \( k \) eigenvalues of a symmetric positive semidefinite matrix is convex.
+    \item $ f(x) = \min_{i=1,\ldots,n} x_i $: Convex. The minimum of a set of linear functions is convex.
+    \item $ f(x) = - \left( \sum_{i=1}^{n} x_i \right)^{1/n} $: Concave on \( \mathbb{R}^n_+ \). The geometric mean is concave, and multiplying by -1 reverses convexity/concavity.
+    \item $ f(w) = \sum_{i=1}^{m} \log(1 + e^{-y_i \langle w, x_i \rangle}) + \frac{1}{2} \| w \|_2^2 $: Convex. The log-sum-exp function and the quadratic function are convex.
+    \item $ f(X, Y) = \| A - XY \|_F $: Convex. The Frobenius norm is convex, and the function is affine in \( X \) and \( Y \).
+    \item $ f(W_1, W_2) = \| W_1 \max(W_2 x, 0) \|_2^2 $: Convex. The composition of a convex non-decreasing function with a convex function is convex.
+\end{enumerate}
+
+
+\section{Problem 3}
+
+\begin{enumerate}
+    \item Lipschitz constant of gradient bounds from above the norm of Hessian: \\
+    Correct. If a function \( f \) has a gradient \( \nabla f \) that is Lipschitz continuous with constant \( L \), then \( \| \nabla^2 f(x) \| \leq L \). This follows from the definition of Lipschitz continuity for the gradient.
+
+    \item Lipschitz constant of gradient bounds from above the absolute values of function: \\
+    Incorrect. The Lipschitz constant of the gradient of a function does not directly bound the absolute values of the function itself. It relates to the rate of change of the gradient.
+
+    \item Lipschitz constant of function bounds from above the norm of Hessian: \\
+    Incorrect. The Lipschitz constant of a function pertains to the function's values and does not provide information about the norm of the Hessian.
+
+    \item Lipschitz constant of function bounds from above the norm of gradient: \\
+    Correct. If a function \( f \) is Lipschitz continuous with constant \( K \), then \( \| \nabla f(x) \| \leq K \). This is derived from the mean value theorem and the definition of Lipschitz continuity for the function.
+\end{enumerate}
+
+
+\end{document}
