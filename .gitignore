@@ -1,7 +1,9 @@
 .DS_Store
-
 recsys/task3/zen_dataset
 recsys/task2/*.csv
 *.csv
 *.gz
 ml-course
+nlp/1/en-fr.test.txt
+nlp/1/en-fr.train.txt
+thesis/glassnode_data_btc
